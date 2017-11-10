@@ -1,3 +1,4 @@
+# deegree workspace for CLC10 INSPIRE
 Workspace configuration for deegree implementing INSPIRE services for the CORINE Land Cover 10 ha (CLC10).
 
 This workspace configuration uses extended INSPIRE-schemas from the European Location Framework (ELF) project.
