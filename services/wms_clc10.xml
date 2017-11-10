@@ -1,0 +1,18 @@
+<deegreeWMS configVersion="3.1.0" 
+            xmlns="http://www.deegree.org/services/wms" 
+            xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" 
+            xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://www.deegree.org/services/wms http://schemas.deegree.org/services/wms/3.1.0/wms_configuration.xsd">
+
+  <MetadataURLTemplate>https://registry.gdi-de.org/id/de.bund.bkg.csw/${metadataSetId}</MetadataURLTemplate>
+
+  <ServiceConfiguration>
+    <DefaultLayerOptions>
+      <MaxFeatures>-1</MaxFeatures>
+    </DefaultLayerOptions>
+  
+    <ThemeId>lcv</ThemeId>
+  </ServiceConfiguration>
+
+</deegreeWMS>

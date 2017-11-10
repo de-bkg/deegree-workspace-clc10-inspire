@@ -1,0 +1,118 @@
+<deegreeServicesMetadata configVersion="3.2.0" 
+                         xmlns="http://www.deegree.org/services/metadata" 
+                         xmlns:ad="urn:x-inspire:specification:gmlas:Addresses:3.0"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://www.deegree.org/services/metadata http://schemas.deegree.org/services/metadata/3.2.0/metadata.xsd">
+
+  <ServiceIdentification>
+    <Title>WFS CORINE Land Cover 10 ha INSPIRE</Title>
+    <Abstract>
+      WFS CORINE Land Cover 10 ha. 
+      This service provides from  CORINE Land Cover 10 ha (CLC10) transformed datasets for the INSPIRE theme Land Cover.
+      The data provided through this service covers the area of Germany. 
+    </Abstract>
+    <Keywords>
+        <Keyword>WMS</Keyword>
+        <Keyword>INSPIRE:DownloadService</Keyword>
+        <Keyword>infoFeatureAccessService</Keyword>
+        <Keyword>DownloadService</Keyword>
+        <Keyword>INSPIRE</Keyword>
+        <Keyword>INSPIRE-WFS_Land-Cover</Keyword>
+        <Keyword>CORINE Land Cover 10 ha</Keyword>
+        <Keyword>CLC10</Keyword>
+        <Keyword>Landbedeckung</Keyword>
+        <Keyword>Deutschland</Keyword>
+        <Keyword>Germany</Keyword>
+        <Keyword>BKG</Keyword>
+    </Keywords>
+    <Fees>This service can be used free of charge corresponding to the Spatial Data Access Act (http://www.geodatenzentrum.de/docpdf/geozg_eng.pdf)</Fees>
+    <AccessConstraints>
+      Terms of Ordinance to Determine the Conditions for Use for the Provision of Spatial Data of the Federation (Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes – GeoNutzV), as published on 19 March 2013 (Bundesgesetzblatt Jahrgang 2013 Teil I Nr. 14) are applied. 
+      For more details see: http://www.geodatenzentrum.de/docpdf/geonutzv_eng.pdf.
+     | Source reference: &amp;copy; GeoBasis-DE / BKG &amp;lt; year of last data download&amp;gt;
+    </AccessConstraints>    
+  </ServiceIdentification>
+
+  <ServiceProvider>
+    <ProviderName>Dienstleistungszentrum des Bundes für Geoinformation und Geodäsie</ProviderName>
+    <ProviderSite>http://www.geodatenzentrum.de</ProviderSite>
+    <ServiceContact>
+      <IndividualName/>
+      <PositionName>Technischer Administrator</PositionName>
+      <Phone>+49 (0) 341 5634 333</Phone>
+      <Facsimile>+49 (0) 341 5634 415</Facsimile>
+      <ElectronicMailAddress>dlz@bkg.bund.de</ElectronicMailAddress>
+      <Address>
+        <DeliveryPoint>Karl-Rothe-Str. 10-14</DeliveryPoint>
+        <City>Leipzig</City>
+        <AdministrativeArea>DE-SN</AdministrativeArea>
+        <PostalCode>04105</PostalCode>
+        <Country>Deutschland</Country>
+      </Address>
+      <OnlineResource>http://www.geodatenzentrum.de</OnlineResource>
+      <Role>PointOfContact</Role>
+    </ServiceContact>
+  </ServiceProvider>
+
+  <!-- DatasetMetadata>
+    <MetadataUrlTemplate>https://registry.gdi-de.org/id/de.bund.bkg.csw/${metadataSetId}</MetadataUrlTemplate>
+
+    <Dataset xmlns:hy-p="http://inspire.ec.europa.eu/schemas/hy-p/4.0">
+      <Name>hy-p:Crossing</Name>
+      <Title>Crossing</Title>
+      <Title lang="ger">Überleitung</Title>
+      < ! - - Abstract lang="ger">Ein künstliches Objekt, das den Fluss von Wasser über ein Hindernis hinweg oder unter einem Hindernis hindurch erlaubt.</Abstract - - >
+      <MetadataSetId>DEBKG00M00000208</MetadataSetId>
+    </Dataset>
+
+  </DatasetMetadata -->
+
+  <!-- ExtendedCapabilities protocolVersions="1.1.0">
+    <inspire_dls:ExtendedCapabilities xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0"
+                                     xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+                                     xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://inspire.ec.europa.eu/schemas/inspire_dls/1.0 http://inspire.ec.europa.eu/schemas/inspire_dls/1.0/inspire_dls.xsd">
+      <inspire_common:MetadataUrl>
+        <inspire_common:URL>http://gdk.gdi-de.org/inspire/srv/eng/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=CE94CE46-9843-4D14-80C3-89446AD2FFBC</inspire_common:URL>
+        <inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
+      </inspire_common:MetadataUrl>
+      <inspire_common:SupportedLanguages>
+        <inspire_common:DefaultLanguage>
+          <inspire_common:Language>eng</inspire_common:Language>
+        </inspire_common:DefaultLanguage>
+      </inspire_common:SupportedLanguages>
+      <inspire_common:ResponseLanguage>
+        <inspire_common:Language>eng</inspire_common:Language>
+      </inspire_common:ResponseLanguage>
+      <inspire_dls:SpatialDataSetIdentifier>
+        <inspire_common:Code>DEBKG00M00000207</inspire_common:Code>
+        <inspire_common:Namespace>https://registry.gdi-de.org/id/de.bund.bkg.csw/</inspire_common:Namespace>
+      </inspire_dls:SpatialDataSetIdentifier>
+    </inspire_dls:ExtendedCapabilities>
+  </ExtendedCapabilities>
+
+  <ExtendedCapabilities protocolVersions="2.0.0">
+    <ows:ExtendedCapabilities xmlns:ows="http://www.opengis.net/ows/1.1" 
+                              xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" 
+                              xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0">
+      <inspire_dls:ExtendedCapabilities>
+        <inspire_common:MetadataUrl>
+          <inspire_common:URL>http://gdk.gdi-de.org/inspire/srv/eng/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;OutputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=CE94CE46-9843-4D14-80C3-89446AD2FFBC</inspire_common:URL>
+          <inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
+        </inspire_common:MetadataUrl>
+        <inspire_common:SupportedLanguages>
+          <inspire_common:DefaultLanguage>
+            <inspire_common:Language>eng</inspire_common:Language>
+          </inspire_common:DefaultLanguage>
+        </inspire_common:SupportedLanguages>
+        <inspire_common:ResponseLanguage>
+          <inspire_common:Language>eng</inspire_common:Language>
+        </inspire_common:ResponseLanguage>
+        <inspire_dls:SpatialDataSetIdentifier>
+          <inspire_common:Code>DEBKG00M00000207</inspire_common:Code>
+          <inspire_common:Namespace>https://registry.gdi-de.org/id/de.bund.bkg.csw/</inspire_common:Namespace>
+        </inspire_dls:SpatialDataSetIdentifier>
+      </inspire_dls:ExtendedCapabilities>
+    </ows:ExtendedCapabilities>
+  </ExtendedCapabilities -->
+
+</deegreeServicesMetadata>

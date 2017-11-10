@@ -1,0 +1,206 @@
+<?xml version="1.0" standalone="no" ?>
+
+<SQLFeatureStore configVersion="3.1.0" 
+                 xmlns="http://www.deegree.org/datasource/feature/sql" 
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                 xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" 
+                 xmlns:base2="http://inspire.ec.europa.eu/schemas/base2/2.0" 
+                 xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" 
+                 xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" 
+                 xmlns:lcn="http://inspire.ec.europa.eu/schemas/lcn/4.0" 
+                 xmlns:lcv="http://inspire.ec.europa.eu/schemas/lcv/4.0" 
+                 xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" 
+                 xmlns:elf-lc="http://www.locationframework.eu/schemas/LandCover/1.0" 
+                 xmlns:xlink="http://www.w3.org/1999/xlink" 
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
+    
+  <JDBCConnId>clc10</JDBCConnId>
+  <StorageCRS srid="0" dim="2D">EPSG:4258</StorageCRS>
+  <GMLSchema>../../appschemas/elf/LandCover.xsd</GMLSchema>
+
+
+
+  <!-- == INSPIRE LandCoverVector =================================== -->
+  
+  <!-- 
+  This FeatureType is deaktivated until the streaming issue for lcv:member is fixed.
+  
+  <FeatureTypeMapping name="lcv:LandCoverDataset" table="lcv.landcoverdataset">
+    <FIDMapping prefix="LandCoverDataset_">
+      <Column name="localid" type="string"/>
+    </FIDMapping>
+    <Complex path="gml:identifier">
+      <Primitive path="text()" mapping="localid"/>
+      <Primitive path="@codeSpace" mapping="'http://bkg.bund.de/clc10'" />
+    </Complex>
+    <Complex path="lcv:inspireId">
+      <Complex path="base:Identifier">
+        <Primitive path="base:localId" mapping="localid"/>
+        <Primitive path="base:namespace" mapping="'http://bkg.bund.de/clc10'"/>
+        <Complex path="base:versionId">
+          <Primitive path="@nilReason" mapping="'other:unpopulated'"/>
+          <Primitive path="@xsi:nil" mapping="'true'"/>
+        </Complex>
+      </Complex>
+    </Complex>
+    <Complex path="lcv:beginLifespanVersion">
+      <Primitive path="text()" mapping="beginlifespanversion"/>
+      <Primitive path="@nilReason" mapping="beginlifespanversion_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="beginlifespanversion_nil"/>
+    </Complex>
+    <Complex path="lcv:endLifespanVersion">
+      <Primitive path="text()" mapping="endlifespanversion"/>
+      <Primitive path="@nilReason" mapping="endlifespanversion_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="endlifespanversion_nil"/>
+    </Complex>
+    <Complex path="lcv:extent">
+      <! - - @href - - >
+      <! - - lcv:EX_Extent (description, geographicElement, temporalElement, verticalElement) - - >
+      <Primitive path="@nilReason" mapping="'other:unpopulated'"/>
+    </Complex>
+    <Primitive path="lcv:name" mapping="name"/>
+    <Complex path="lcv:nomenclatureDocumentation">
+      <Complex path="lcn:LandCoverNomenclature">
+        <Join table="lcv.nomenclature" fromColumns="nomenclature_fk" toColumns="id"/>
+        < ! - - 0..1 lcn:embeddedDescription (anyType) - - >
+        <Complex path="lcn:inspireId">
+          < ! - - inspireId doesn't make sense, as this can't be referenced - - >
+          <Complex path="base:Identifier">
+            <Primitive path="base:localId" mapping="id"/>
+            <Primitive path="base:namespace" mapping="'http://bkg.bund.de/clc10'"/>
+            <Complex path="base:versionId">
+              <Primitive path="@nilReason" mapping="'other:unpopulated'"/>
+              <Primitive path="@xsi:nil" mapping="'true'"/>
+            </Complex>
+          </Complex>
+        </Complex>
+        <Primitive path="lcn:nomenclatureCodeList" mapping="codelist"/>
+        < ! - - 0..1 lcn:externalDescription (AbstractMemberType) - - >
+        <Complex path="lcn:responsibleParty">
+          <Join table="lcv.nomenclature_responsible" fromColumns="responsible_fk" toColumns="id"/>
+          <Complex path="base2:RelatedParty">
+            <Complex path="base2:individualName">
+              <Primitive path="gco:CharacterString" mapping="individual"/>
+              < ! - - TODO: Primitive path="@xsi:nil" mapping="individual_nil"/ - - >
+              <Primitive path="@gco:nilReason" mapping="individual_nilreason"/>
+            </Complex>
+            <Complex path="base2:organisationName">
+              <Primitive path="gco:CharacterString" mapping="organisation"/>
+              < ! - - TODO: Primitive path="@xsi:nil" mapping="individual_nil"/ - - >
+              <Primitive path="@gco:nilReason" mapping="organisation_nilreason"/>
+            </Complex>
+            <Complex path="base2:positionName">
+              <Primitive path="gco:CharacterString" mapping="position"/>
+              < ! - - TODO: Primitive path="@xsi:nil" mapping="individual_nil"/ - - >
+              <Primitive path="@gco:nilReason" mapping="position_nilreason"/>
+            </Complex>
+            < ! - - 0..1 base2:contact/base2:Contact (address, contactInstructions, electronicMailAddress, hoursOfService, ...) - - >
+            <Complex path="base2:role">
+              <Primitive path="@xlink:href" mapping="role"/>
+              < ! - - TODO: Primitive path="@xsi:nil" mapping="individual_nil"/ - - >
+              <Primitive path="@nilReason" mapping="role_nilreason"/>
+            </Complex>
+          </Complex>
+        </Complex>
+      </Complex>
+    </Complex>
+    <Complex path="lcv:validFrom">
+      <Primitive path="text()" mapping="validfrom"/>
+      <Primitive path="@nilReason" mapping="validfrom_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="validfrom_nil"/>
+    </Complex>
+    <Complex path="lcv:validTo">
+      <Primitive path="text()" mapping="validto"/>
+      <Primitive path="@nilReason" mapping="validto_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="validto_nil"/>
+    </Complex>
+    <Complex path="lcv:member">
+      < ! - - member = LandcoverUnitPropertyType - - >
+      <Join table="lcv.landcoverdataset_member" fromColumns="localid" toColumns="parentfk"/>
+      <Primitive path="@nilReason" mapping="nilreason"/>      
+      <Feature path=".">
+        < ! - - . = LandcoverUnitType - - >
+        < ! - - 
+          FIXME: Implementing lcv:member as fully resolvable embedded Feature seams to be problematic. 
+          LandCoverDataset will contain a single feature referencing all LandCoverUnits. Creating the references through deegree 
+          is a performance killer as for each member multiple SQL-Statements will be executed. Streaming starts first when all
+          statements are finished.
+          Predefining URL doesn't work for Requests with RESOLVEDEPTH > 0 -> ServiceException: Resolving of remote references is not implemented yet.
+          
+          Test: view-source:lsvpostcat0:8080/inspire/services/wfs_clc10?service=WFS&request=GetFeature&VERSION=2.0.0&TYPENAMES=lcv:LandCoverDataset
+          Another problematic point with predefined URLs in DB is, that the requested Version and output format is fixed!
+        - - >
+        <Join table="lcv.landcoverunit" fromColumns="landcoverunit_fk" toColumns="localid" />
+        <Href mapping="href"/>
+        < ! - - Href mapping="href_fixed"/ - - >
+      </Feature>
+    </Complex>
+  </FeatureTypeMapping-->
+  
+  <FeatureTypeMapping name="lcv:LandCoverUnit" table="lcv.landcoverunit">
+    <FIDMapping prefix="LandCoverUnit_">
+      <Column name="localid" type="string"/>
+    </FIDMapping>
+    <Complex path="gml:identifier">
+      <Primitive path="text()" mapping="localid"/>
+      <Primitive path="@codeSpace" mapping="'http://bkg.bund.de/clc10'" />
+    </Complex>
+    <Complex path="lcv:inspireId">
+      <Complex path="base:Identifier">
+        <Primitive path="base:localId" mapping="localid"/>
+        <Primitive path="base:namespace" mapping="'http://bkg.bund.de/clc10'"/>
+        <Complex path="base:versionId">
+          <Primitive path="@nilReason" mapping="'other:unpopulated'"/>
+          <Primitive path="@xsi:nil" mapping="'true'"/>
+        </Complex>
+      </Complex>
+    </Complex>
+    <Complex path="lcv:beginLifespanVersion">
+      <Primitive path="text()" mapping="beginlifespanversion"/>
+      <Primitive path="@nilReason" mapping="beginlifespanversion_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="beginlifespanversion_nil"/>
+    </Complex>
+    <Complex path="lcv:endLifespanVersion">
+      <Primitive path="text()" mapping="endlifespanversion"/>
+      <Primitive path="@nilReason" mapping="endlifespanversion_nilreason"/>
+      <Primitive path="@xsi:nil" mapping="endlifespanversion_nil"/>
+    </Complex>
+    <Complex path="lcv:geometry">
+      <Geometry path="." mapping="geometry"/>
+    </Complex>
+    <Complex path="lcv:landCoverObservation">
+      <Join table="lcv.landcoverunit_landcoverobservation" fromColumns="localid" toColumns="parentfk"/>
+      <Complex path="lcv:LandCoverObservation">
+        <Complex path="lcv:class">
+          <Primitive path="@nilReason" mapping="class_nilreason"/>
+          <Primitive path="@xlink:href" mapping="class_href"/>
+        </Complex>
+        <Complex path="lcv:mosaic">
+          <Join table="lcv.landcoverunit_landcoverobservation_mosaic" fromColumns="id" toColumns="parentfk"/>
+          <Primitive path="@nilReason" mapping="nilreason"/>
+          <Primitive path="@xsi:nil" mapping="nil"/>
+          <Complex path="lcv:LandCoverValue">
+            <Complex path="lcv:class">
+              <Primitive path="@nilReason" mapping="landcovervalue_class_nilreason"/>
+              <Primitive path="@xlink:href" mapping="landcovervalue_class_href"/>
+            </Complex>
+            <Complex path="lcv:coveredPercentage">
+              <Primitive path="text()" mapping="landcovervalue_coveredpercentage"/>
+              <Primitive path="@nilReason" mapping="landcovervalue_coveredpercentage_nilreason"/>
+              <Primitive path="@xsi:nil" mapping="landcovervalue_coveredpercentage_nil"/>
+            </Complex>
+          </Complex>
+        </Complex>
+        <Complex path="lcv:observationDate">
+          <Primitive path="text()" mapping="observationdate"/>
+          <Primitive path="@nilReason" mapping="observationdate_nilreason"/>
+          <Primitive path="@xsi:nil" mapping="observationdate_nil"/>
+        </Complex>
+      </Complex>
+    </Complex>
+  </FeatureTypeMapping>
+
+  
+</SQLFeatureStore>

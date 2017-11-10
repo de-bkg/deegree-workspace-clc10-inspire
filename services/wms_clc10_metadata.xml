@@ -1,0 +1,91 @@
+<deegreeServicesMetadata configVersion="3.0.0"
+                         xmlns="http://www.deegree.org/services/metadata" 
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://www.deegree.org/services/metadata http://schemas.deegree.org/services/metadata/3.0.0/metadata.xsd">
+
+  <ServiceIdentification>
+    <Title>WMS CORINE Land Cover 10 ha INSPIRE</Title>
+    <Abstract>
+      WMS CORINE Land Cover 10 ha. 
+      This service provides from  CORINE Land Cover 10 ha (CLC10) transformed datasets for the INSPIRE theme Land Cover.
+      The data provided through this service covers the area of Germany. 
+    </Abstract>
+    <Keywords>
+        <Keyword>WMS</Keyword>
+        <Keyword>infoMapAccessService</Keyword>
+        <Keyword>ViewService</Keyword>
+        <Keyword>INSPIRE:ViewService</Keyword>
+        <Keyword>INSPIRE</Keyword>
+        <Keyword>INSPIRE-WMS_Land-Cover</Keyword>
+        <Keyword>CORINE Land Cover 10 ha</Keyword>
+        <Keyword>CLC10</Keyword>
+        <Keyword>Landbedeckung</Keyword>
+        <Keyword>Deutschland</Keyword>
+        <Keyword>Germany</Keyword>
+        <Keyword>BKG</Keyword>
+    </Keywords>
+    <Fees>This service can be used free of charge corresponding to the Spatial Data Access Act (http://www.geodatenzentrum.de/docpdf/geozg_eng.pdf)</Fees>
+    <AccessConstraints>
+      Terms of Ordinance to Determine the Conditions for Use for the Provision of Spatial Data of the Federation (Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes – GeoNutzV), as published on 19 March 2013 (Bundesgesetzblatt Jahrgang 2013 Teil I Nr. 14) are applied. 
+      For more details see: http://www.geodatenzentrum.de/docpdf/geonutzv_eng.pdf.
+     | Source reference: &amp;copy; GeoBasis-DE / BKG &amp;lt; year of last data download&amp;gt;
+    </AccessConstraints>    
+  </ServiceIdentification>
+
+  <ServiceProvider>
+    <ProviderName>Dienstleistungszentrum des Bundes für Geoinformation und Geodäsie</ProviderName>
+    <ProviderSite>http://www.geodatenzentrum.de</ProviderSite>
+    <ServiceContact>
+      <IndividualName/>
+      <PositionName>Technischer Administrator</PositionName>
+      <Phone>+49 (0) 341 5634 333</Phone>
+      <Facsimile>+49 (0) 341 5634 415</Facsimile>
+      <ElectronicMailAddress>dlz@bkg.bund.de</ElectronicMailAddress>
+      <Address>
+        <DeliveryPoint>Karl-Rothe-Str. 10-14</DeliveryPoint>
+        <City>Leipzig</City>
+        <AdministrativeArea>DE-SN</AdministrativeArea>
+        <PostalCode>04105</PostalCode>
+        <Country>Deutschland</Country>
+      </Address>
+      <OnlineResource>http://www.geodatenzentrum.de</OnlineResource>
+      <Role>PointOfContact</Role>
+    </ServiceContact>
+  </ServiceProvider>
+
+  <!-- DatasetMetadata>
+    <MetadataUrlTemplate>https://registry.gdi-de.org/id/de.bund.bkg.csw/${metadataSetId}</MetadataUrlTemplate>
+    <ExternalMetadataAuthority name="BKG">https://registry.gdi-de.org/id/de.bund.bkg.csw/</ExternalMetadataAuthority>
+
+    <Dataset>
+      <Name>TN.AirTransportNetwork</Name>                
+      <Title>Air Transport Network</Title>                       
+      <Abstract>Air Transport Network</Abstract>
+      <MetadataSetId>DEBKG00M00000207</MetadataSetId>
+      <ExternalMetadataSetId authority="BKG">DEBKG00M00000207</ExternalMetadataSetId>
+    </Dataset>
+
+  </DatasetMetadata-->
+    
+<!--
+  <ExtendedCapabilities protocolVersions="1.3.0">
+    <inspire_vs:ExtendedCapabilities xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" 
+                                     xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" 
+                                     xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
+      <inspire_common:MetadataUrl>
+        <inspire_common:URL>http://mis.bkg.bund.de/geonetwork/srv/eng/csw?request=GetRecordById&amp;service=CSW&amp;version=2.0.2&amp;resultType=results&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;outputFormat=application/xml&amp;typeNames=csw:Record&amp;elementSetName=full&amp;id=cd7b8516-bbe3-4836-9ed8-b49b6d279932</inspire_common:URL>
+        <inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
+      </inspire_common:MetadataUrl>
+      <inspire_common:SupportedLanguages>
+        <inspire_common:DefaultLanguage>
+          <inspire_common:Language>ger</inspire_common:Language>
+        </inspire_common:DefaultLanguage>
+      </inspire_common:SupportedLanguages>
+      <inspire_common:ResponseLanguage>
+        <inspire_common:Language>ger</inspire_common:Language>
+      </inspire_common:ResponseLanguage>
+    </inspire_vs:ExtendedCapabilities>
+  </ExtendedCapabilities>
+
+-->
+</deegreeServicesMetadata>

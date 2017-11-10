@@ -1,0 +1,34 @@
+<SimpleSQLFeatureStore configVersion="3.0.1"
+  xmlns="http://www.deegree.org/datasource/feature/simplesql"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.deegree.org/datasource/feature/simplesql
+  http://schemas.deegree.org/datasource/feature/simplesql/3.0.1/simplesql.xsd">
+
+  <StorageCRS>EPSG:4258</StorageCRS>
+  
+  <FeatureTypeName>LandCoverUnit</FeatureTypeName>
+  <FeatureTypeNamespace>http://inspire.ec.europa.eu/schemas/lcv/4.0</FeatureTypeNamespace>
+  <FeatureTypePrefix>lcv</FeatureTypePrefix>
+
+  <JDBCConnId>clc10</JDBCConnId>
+  
+  <!-- Required: Query statement -->
+  <SQLStatement>
+    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
+    WHERE geometry &amp;&amp; st_geomfromtext(?, -1)
+  </SQLStatement>
+
+  <!-- Required: Bounding box statement -->
+  <BBoxStatement>SELECT st_astext(ST_Estimated_Extent('lcv.landcoverunit', 'geometry')) as bbox</BBoxStatement>
+  
+  <LODStatement aboveScale="300000">
+    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
+    WHERE geometry &amp;&amp; st_geomfromtext(?, -1) AND ST_Area(geometry) &gt; 1.5e-05
+  </LODStatement>
+  
+  <LODStatement aboveScale="1000000">
+    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
+    WHERE geometry &amp;&amp; st_geomfromtext(?, -1) AND ST_Area(geometry) &gt; 0.001
+  </LODStatement>
+
+</SimpleSQLFeatureStore>
