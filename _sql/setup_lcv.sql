@@ -102,7 +102,6 @@ ALTER TABLE lcv.landcoverunit_landcoverobservation_mosaic OWNER TO inspire;
 -- additional indizes
 CREATE INDEX landcoverdataset_member_parentfk_idx ON lcv.landcoverdataset_member (parentfk ASC NULLS LAST);
 
-CREATE INDEX landcoverdataset_member_parentfk_idx ON lcv.landcoverdataset_member (parentfk ASC NULLS LAST);
 CREATE INDEX landcoverunit_landcoverobservation_parentfk_idx ON lcv.landcoverunit_landcoverobservation (parentfk ASC NULLS LAST);
 CREATE INDEX landcoverunit_landcoverobservation_mosaic_parentfk_idx ON lcv.landcoverunit_landcoverobservation_mosaic (parentfk ASC NULLS LAST);
 

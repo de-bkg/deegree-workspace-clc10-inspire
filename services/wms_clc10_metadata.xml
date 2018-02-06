@@ -53,39 +53,36 @@
     </ServiceContact>
   </ServiceProvider>
 
-  <!-- DatasetMetadata>
+  <DatasetMetadata>
     <MetadataUrlTemplate>https://registry.gdi-de.org/id/de.bund.bkg.csw/${metadataSetId}</MetadataUrlTemplate>
     <ExternalMetadataAuthority name="BKG">https://registry.gdi-de.org/id/de.bund.bkg.csw/</ExternalMetadataAuthority>
 
     <Dataset>
-      <Name>TN.AirTransportNetwork</Name>                
-      <Title>Air Transport Network</Title>                       
-      <Abstract>Air Transport Network</Abstract>
-      <MetadataSetId>DEBKG00M00000207</MetadataSetId>
-      <ExternalMetadataSetId authority="BKG">DEBKG00M00000207</ExternalMetadataSetId>
+      <Name>LC.LandCoverSurfaces</Name>                
+      <Title>Land Cover Surfaces</Title>                       
+      <Abstract>Land Cover Surfaces</Abstract>
+      <MetadataSetId>DEBKG00M00000221</MetadataSetId>
+      <ExternalMetadataSetId authority="BKG">DEBKG00M00000221</ExternalMetadataSetId>
     </Dataset>
 
-  </DatasetMetadata-->
+  </DatasetMetadata>
     
-<!--
   <ExtendedCapabilities protocolVersions="1.3.0">
     <inspire_vs:ExtendedCapabilities xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" 
                                      xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" 
                                      xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
       <inspire_common:MetadataUrl>
-        <inspire_common:URL>http://mis.bkg.bund.de/geonetwork/srv/eng/csw?request=GetRecordById&amp;service=CSW&amp;version=2.0.2&amp;resultType=results&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;outputFormat=application/xml&amp;typeNames=csw:Record&amp;elementSetName=full&amp;id=cd7b8516-bbe3-4836-9ed8-b49b6d279932</inspire_common:URL>
+        <inspire_common:URL>http://mis.bkg.bund.de/geonetwork/srv/eng/csw?request=GetRecordById&amp;service=CSW&amp;version=2.0.2&amp;resultType=results&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;outputFormat=application/xml&amp;typeNames=csw:Record&amp;elementSetName=full&amp;id=99639E1D-5560-49F3-838B-AFB3273B26C8</inspire_common:URL>
         <inspire_common:MediaType>application/vnd.iso.19139+xml</inspire_common:MediaType>
       </inspire_common:MetadataUrl>
       <inspire_common:SupportedLanguages>
         <inspire_common:DefaultLanguage>
-          <inspire_common:Language>ger</inspire_common:Language>
+          <inspire_common:Language>eng</inspire_common:Language>
         </inspire_common:DefaultLanguage>
       </inspire_common:SupportedLanguages>
       <inspire_common:ResponseLanguage>
-        <inspire_common:Language>ger</inspire_common:Language>
+        <inspire_common:Language>eng</inspire_common:Language>
       </inspire_common:ResponseLanguage>
     </inspire_vs:ExtendedCapabilities>
   </ExtendedCapabilities>
-
--->
 </deegreeServicesMetadata>

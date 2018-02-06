@@ -19,7 +19,7 @@
   </SQLStatement>
 
   <!-- Required: Bounding box statement -->
-  <BBoxStatement>SELECT st_astext(ST_Estimated_Extent('lcv.landcoverunit', 'geometry')) as bbox</BBoxStatement>
+  <BBoxStatement>SELECT st_astext(ST_Estimated_Extent('lcv', 'landcoverunit', 'geometry')) as bbox</BBoxStatement>
   
   <LODStatement aboveScale="300000">
     SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
