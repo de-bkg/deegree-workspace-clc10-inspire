@@ -7,8 +7,13 @@ CREATE INDEX lcv_landcoverunit_area_idx ON lcv.landcoverunit (ST_Area(geometry))
 
 UPDATE lcv.landcoverunit_landcoverobservation SET class_href = 'http://dd.eionet.europa.eu/vocabulary/landcover/clc/' || class_href ;
 
--- predefine lcv:member URLs for better performance
-ALTER TABLE lcv.landcoverdataset_member ADD COLUMN href_fixed text;
-UPDATE lcv.landcoverdataset_member SET href = '#' || href, href_fixed = 'http://lsvpostcat0:8080/inspire/services/wfs_clc10?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=' || regexp_replace( href, '^#', '');
+UPDATE lcv.landcoverdataset SET beginlifespanversion_nilreason = 'other:unpopulated' WHERE beginlifespanversion_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverdataset SET endlifespanversion_nilreason = 'other:unpopulated' WHERE endlifespanversion_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverdataset SET validfrom_nilreason = 'other:unpopulated' WHERE validfrom_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverdataset SET validto_nilreason = 'other:unpopulated' WHERE validto_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverunit SET endlifespanversion_nilreason = 'other:unpopulated' WHERE endlifespanversion_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverunit SET beginlifespanversion_nilreason = 'other:unpopulated' WHERE beginlifespanversion_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverunit_landcoverobservation SET observationdate_nilreason = 'other:unpopulated' WHERE observationdate_nilreason = 'Unpopulated';
+UPDATE lcv.landcoverunit_landcoverobservation_mosaic SET nilreason = 'other:unpopulated' WHERE nilreason = 'Unpopulated';
+UPDATE lcv.landcoverunit_landcoverobservation_mosaic SET landcovervalue_coveredpercentage_nilreason = 'other:unpopulated' WHERE landcovervalue_coveredpercentage_nilreason = 'unpopulated';
 
-UPDATE lcv.landcoverdataset_member SET href_fixed = href, href = replace( href, 'http://lsvpostcat0:8080/inspire/services/wfs_clc10?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=', '#');

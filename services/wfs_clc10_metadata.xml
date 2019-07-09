@@ -5,11 +5,12 @@
                          xsi:schemaLocation="http://www.deegree.org/services/metadata http://schemas.deegree.org/services/metadata/3.2.0/metadata.xsd">
 
   <ServiceIdentification>
-    <Title>WFS CORINE Land Cover 10 ha INSPIRE</Title>
+    <Title>INSPIRE-WFS Land Cover CLC10</Title>
     <Abstract>
-      WFS CORINE Land Cover 10 ha. 
-      This service provides from  CORINE Land Cover 10 ha (CLC10) transformed datasets for the INSPIRE theme Land Cover.
+      INSPIRE Direct Access Download Service for Land Cover CLC10. 
+      This service provides from CORINE Land Cover 10 ha (CLC10) transformed datasets for the INSPIRE theme Land Cover.
       The data provided through this service covers the area of Germany. 
+      Please register at our information service (http://www.geodatenzentrum.de/geodaten/gdz?l=infodienst) to be automatically informed on planed maintenance or changes.
     </Abstract>
     <Keywords>
         <Keyword>WMS</Keyword>
@@ -25,12 +26,14 @@
         <Keyword>Germany</Keyword>
         <Keyword>BKG</Keyword>
     </Keywords>
-    <Fees>This service can be used free of charge corresponding to the Spatial Data Access Act (http://www.geodatenzentrum.de/docpdf/geozg_eng.pdf)</Fees>
-    <AccessConstraints>
-      Terms of Ordinance to Determine the Conditions for Use for the Provision of Spatial Data of the Federation (Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes – GeoNutzV), as published on 19 March 2013 (Bundesgesetzblatt Jahrgang 2013 Teil I Nr. 14) are applied. 
-      For more details see: http://www.geodatenzentrum.de/docpdf/geonutzv_eng.pdf.
-     | Source reference: &amp;copy; GeoBasis-DE / BKG &amp;lt; year of last data download&amp;gt;
-    </AccessConstraints>    
+    <Fees>
+      This service can be used free of charge corresponding to the Ordinance to Determine the Conditions for Use for the Provision of Spatial Data of the Federation 
+      (Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes – GeoNutzV), 
+      as published on 19 March 2013 (Bundesgesetzblatt Jahrgang 2013 Teil I Nr. 14). For more details see: http://www.geodatenzentrum.de/docpdf/geonutzv_eng.pdf.
+      Source reference has to be maintained. 
+      | Source reference: &amp;copy; GeoBasis-DE / BKG &amp;lt; year of last data download&amp;gt;
+    </Fees>
+    <AccessConstraints>None</AccessConstraints>
   </ServiceIdentification>
 
   <ServiceProvider>

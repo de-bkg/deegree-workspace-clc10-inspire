@@ -29,12 +29,12 @@
       <Column name="localid" type="string"/>
     </FIDMapping>
     <Complex path="gml:identifier">
-      <Primitive path="text()" mapping="localid"/>
-      <Primitive path="@codeSpace" mapping="'https://registry.gdi-de.org/id/de.bund.bkg.inspire.clc10'" />
+      <Primitive path="text()" mapping="gml_identifier"/>
+      <Primitive path="@codeSpace" mapping="'http://inspire.ec.europa.eu/ids'" />
     </Complex>
     <Complex path="lcv:inspireId">
       <Complex path="base:Identifier">
-        <Primitive path="base:localId" mapping="localid"/>
+        <Primitive path="base:localId" mapping="inspire_id"/>
         <Primitive path="base:namespace" mapping="'https://registry.gdi-de.org/id/de.bund.bkg.inspire.clc10'"/>
         <Complex path="base:versionId">
           <Primitive path="@nilReason" mapping="'other:unpopulated'"/>
@@ -130,12 +130,12 @@
       <Column name="localid" type="string"/>
     </FIDMapping>
     <Complex path="gml:identifier">
-      <Primitive path="text()" mapping="localid"/>
-      <Primitive path="@codeSpace" mapping="'https://registry.gdi-de.org/id/de.bund.bkg.inspire.clc10'" />
+      <Primitive path="text()" mapping="gml_identifier"/>
+      <Primitive path="@codeSpace" mapping="'http://inspire.ec.europa.eu/ids'" />
     </Complex>
     <Complex path="lcv:inspireId">
       <Complex path="base:Identifier">
-        <Primitive path="base:localId" mapping="localid"/>
+        <Primitive path="base:localId" mapping="inspire_id"/>
         <Primitive path="base:namespace" mapping="'https://registry.gdi-de.org/id/de.bund.bkg.inspire.clc10'"/>
         <Complex path="base:versionId">
           <Primitive path="@nilReason" mapping="'other:unpopulated'"/>

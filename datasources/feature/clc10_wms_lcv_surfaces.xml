@@ -14,21 +14,65 @@
   
   <!-- Required: Query statement -->
   <SQLStatement>
-    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href, st_asbinary(geometry) as geometry FROM lcv.landcoverunit_view_lod
     WHERE geometry &amp;&amp; st_geomfromtext(?, -1)
   </SQLStatement>
 
   <!-- Required: Bounding box statement -->
   <BBoxStatement>SELECT st_astext(ST_Estimated_Extent('lcv', 'landcoverunit', 'geometry')) as bbox</BBoxStatement>
   
-  <LODStatement aboveScale="300000">
-    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
-    WHERE geometry &amp;&amp; st_geomfromtext(?, -1) AND ST_Area(geometry) &gt; 1.5e-05
-  </LODStatement>
+  <LODStatement aboveScale="100000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href, st_asbinary(ST_Simplify(geometry,0.0005)) as geometry 
+    FROM lcv.landcoverunit_view_lod
+    WHERE geometry &amp;&amp; st_geomfromtext(?, -1)
+    ORDER BY ST_Area(geometry) DESC
+    LIMIT 4000
+  </LODStatement>  
+  
+  <LODStatement aboveScale="250000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href, st_asbinary(ST_CollectionExtract(geom_lod1,3)) as geometry
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod1 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod1 IS NOT NULL
+    ORDER BY ST_Area(geom_lod1) DESC
+    LIMIT 5000
+  </LODStatement>  
+  
+  <LODStatement aboveScale="500000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href,  st_asbinary(ST_CollectionExtract(geom_lod2,3)) as geometry
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod2 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod2 IS NOT NULL
+    ORDER BY ST_Area(geom_lod2) DESC
+    LIMIT 5000
+  </LODStatement>  
   
   <LODStatement aboveScale="1000000">
-    SELECT localid, beginlifespanversion, endlifespanversion, st_asbinary(geometry) FROM lcv.landcoverunit
-    WHERE geometry &amp;&amp; st_geomfromtext(?, -1) AND ST_Area(geometry) &gt; 0.001
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href,  st_asbinary(ST_CollectionExtract(geom_lod3,3)) as geometry
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod3 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod3 IS NOT NULL
+    ORDER BY ST_Area(geom_lod3) DESC
+    LIMIT 5000
+  </LODStatement>  
+  
+  <LODStatement aboveScale="2000000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href,  st_asbinary(ST_CollectionExtract(geom_lod4,3)) as geometry 
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod4 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod4 IS NOT NULL
+    ORDER BY ST_Area(geom_lod4) DESC
+    LIMIT 5000
+  </LODStatement>  
+  
+  <LODStatement aboveScale="4000000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href,  st_asbinary(ST_CollectionExtract(geom_lod5,3)) as geometry 
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod5 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod5 IS NOT NULL
+    ORDER BY ST_Area(geom_lod5) DESC
+    LIMIT 7500
+  </LODStatement>  
+  
+  <LODStatement aboveScale="8000000">
+    SELECT localid, beginlifespanversion, endlifespanversion, observationdate, class_href, st_asbinary(ST_CollectionExtract(geom_lod6,3)) as geometry 
+    FROM lcv.landcoverunit_view_lod 
+    WHERE geom_lod6 &amp;&amp; st_geomfromtext(?, -1) AND geom_lod6 IS NOT NULL
   </LODStatement>
 
 </SimpleSQLFeatureStore>
